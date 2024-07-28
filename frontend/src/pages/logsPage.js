@@ -1,15 +1,15 @@
 
 import AppAppBar from '../components/navbar';
-import IssueForm from '../components/issueForm';
+import Logs from '../components/logs';
 
 
-function Signinpage() {
+function LogsPage() {
   return (
     <div className="App">
       <AppAppBar/>
-      <IssueForm />
+      <Logs />
     </div>
   );
 }
 
-export default Signinpage;
+export default LogsPage;

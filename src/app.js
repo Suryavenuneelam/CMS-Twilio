@@ -4,7 +4,8 @@ const loginroute = require('./routes/login');
 const userroute = require('./routes/user');
 const formsroute = require('./routes/forms');
 const logoutroute = require('./services/logout');
-const callroute = require('./routes/callRoutes'); // Import the call routes
+const callroute = require('./routes/callRoutes');
+const callLogRoutes = require('./routes/callLogRoute'); 
 
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -27,6 +28,7 @@ app.use("/api", userroute);
 app.use("/api", logoutroute);
 app.use("/issue", formsroute);
 app.use("/api/calls", callroute); // Add the call routes
+app.use("/calls", callLogRoutes); // Add the call routes
 app.use("/twilio", redirectCalls);
 
 app.listen(PORT, () => { 

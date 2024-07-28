@@ -200,6 +200,16 @@ function AppAppBar({ mode, toggleColorMode }) {
                   >
                     FORMS
                   </Button></a>
+                  <a href = "/logs" style={{textDecoration:"none"}}>
+                  <Button
+                    color="primary"
+                    variant="text"
+                    size="small"
+                    
+                    sx={{ marginLeft: '10px', marginRight: '10px' }}
+                  >
+                    LOGS
+                  </Button></a>
                   <Button
                     color="primary"
                     variant="text"

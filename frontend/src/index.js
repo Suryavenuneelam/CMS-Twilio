@@ -1,25 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-
 import reportWebVitals from './reportWebVitals';
-
-import App from './App';
-import Signinpage from '../src/pages/login.js';
-import Signuppage from '../src/pages/signup.js';
-import IssueFormPage from '../src/pages/issueForm.js';
-
-
 import {
   createBrowserRouter,
   RouterProvider,
-  Route
-} from "react-router-dom";
+} from 'react-router-dom';
 
+import App from './App';
+import Signinpage from './pages/login.js';
+import Signuppage from './pages/signup.js';
+import IssueFormPage from './pages/issueForm.js';
+import LogsPage from './pages/logsPage.js';
+import DisplayPage from './pages/displayForm.js';
 
 const router = createBrowserRouter([
   {
-    path: "",
+    path: "/",
     element: <App />,
   },
   {
@@ -34,15 +31,19 @@ const router = createBrowserRouter([
     path: "form",
     element: <IssueFormPage />,
   },
-  
+  {
+    path: "logs",
+    element: <LogsPage />,
+  },
+  {
+    path: "details/:logId", // Updated to include dynamic logId
+    element: <DisplayPage />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <RouterProvider router={router}/>
+  <RouterProvider router={router} />
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
